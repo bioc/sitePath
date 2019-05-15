@@ -269,10 +269,10 @@ fixationSites.lineagePath <- function(paths,
                         } else if (any(r <- qualified == 2L)) {
                             # Remove existing paths with an "adding state"
                             # of 2L and add the "s"
-                            res[[site]] <-
-                                res[[site]][-which(r)]
+                            mutations[[site]] <-
+                                mutations[[site]][-which(r)]
                             targetIndex <-
-                                length(res[[site]]) + 1
+                                length(mutations[[site]]) + 1
                         }
                     }
                 }
