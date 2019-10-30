@@ -1,3 +1,9 @@
+CHANGES IN VERSION 1.2.1
+-------------------------
+    o Bug fix: plot warning caused by 'tab' character
+    o Bug fix: bad design causing 'multiFixationSites' extremely slow
+    o Bug fix: 'fixationSites' gives replicated tips when combined
+
 CHANGES IN VERSION 1.1.10
 -------------------------
     o Allow user to choose whether to show tip labels in the plot functions
