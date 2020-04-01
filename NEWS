@@ -1,3 +1,7 @@
+CHANGES IN VERSION 1.2.3
+-------------------------
+    o Bug fix: using sequence similarity failed to find 'lineagePath'.
+
 CHANGES IN VERSION 1.2.2
 -------------------------
     o Bug fix: infinity loop might occur when using 'fixationSites' or
