@@ -1,3 +1,9 @@
+CHANGES IN VERSION 1.6.3
+-------------------------
+    o Fix: 'addMSA' function unable to handle 'treedata' object.
+    o Fix: create 'allSitesName' function to solve inability to get site name.
+    o Fix: repeated cluster name by '.assignClusterNames' internal function.
+
 CHANGES IN VERSION 1.6.2
 -------------------------
     o Fix: Wrong ancestral node at divergent point (labeling issue).
