@@ -1,3 +1,7 @@
+CHANGES IN VERSION 1.6.4
+-------------------------
+    o Bug fix: empty groups produced by 'groupTips' function.
+
 CHANGES IN VERSION 1.6.3
 -------------------------
     o Fix: 'addMSA' function unable to handle 'treedata' object.
