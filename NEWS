@@ -1,3 +1,7 @@
+CHANGES IN VERSION 1.6.5
+-------------------------
+    o Fix: Add 'rmarkdown' in 'Suggests'
+
 CHANGES IN VERSION 1.6.4
 -------------------------
     o Bug fix: empty groups produced by 'groupTips' function.
