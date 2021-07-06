@@ -1,3 +1,8 @@
+CHANGES IN VERSION 1.8.2
+-------------------------
+    o Bug fix: 'allSitesName' returns NULL for 'paraFixSites'.
+    o Fix: reduced plot legend label for ggplot2 version 3.3.4.
+
 CHANGES IN VERSION 1.8.1
 -------------------------
     o Fix: missing plot functions for 'parallelSites'.
