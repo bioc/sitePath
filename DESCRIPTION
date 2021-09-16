@@ -2,7 +2,7 @@ Package: sitePath
 Type: Package
 Title: Phylogenetic pathway–dependent recognition of fixed substitutions and 
     parallel mutations
-Version: 1.8.3
+Version: 1.8.4
 Authors@R: c(person("Chengyang", "Ji",
                     email = "chengyang.ji12@alumni.xjtlu.edu.cn",
                     role = c("aut", "cre", "cph"),
@@ -40,6 +40,7 @@ Suggests:
     BiocStyle,
     devtools,
     knitr,
+    magick,
     rmarkdown,
     testthat
 LinkingTo: Rcpp
