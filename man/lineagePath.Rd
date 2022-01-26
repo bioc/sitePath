@@ -2,12 +2,28 @@
 % Please edit documentation in R/lineagePath.R
 \name{lineagePath}
 \alias{lineagePath}
+\alias{lineagePath.phylo}
+\alias{lineagePath.treedata}
 \alias{lineagePath.phyMSAmatched}
 \alias{sneakPeek}
 \alias{lineagePath.sneakPeekedPaths}
+\alias{lineagePath.paraFixSites}
 \title{Resolving lineage paths using SNP}
 \usage{
 lineagePath(tree, similarity, ...)
+
+\method{lineagePath}{phylo}(
+  tree,
+  similarity = NULL,
+  alignment = NULL,
+  seqType = c("AA", "DNA", "RNA"),
+  reference = NULL,
+  gapChar = "-",
+  minSkipSize = NULL,
+  ...
+)
+
+\method{lineagePath}{treedata}(tree, ...)
 
 \method{lineagePath}{phyMSAmatched}(
   tree,
@@ -20,18 +36,36 @@ lineagePath(tree, similarity, ...)
 sneakPeek(tree, step = 9, maxPath = NULL, minPath = 0, makePlot = TRUE)
 
 \method{lineagePath}{sneakPeekedPaths}(tree, similarity, ...)
+
+\method{lineagePath}{paraFixSites}(tree, similarity = NULL, ...)
 }
 \arguments{
 \item{tree}{The return from \code{\link{addMSA}} or \code{sneakPeek}
 function.}
 
-\item{similarity}{This decides how minor SNPs are to remove. If provided as
-fraction between 0 and 1, then the minimum number of SNP will be total tips
-times \code{similariy}. If provided as integer greater than 1, the minimum
-number will be \code{similariy}. The default \code{similariy} is 0.05 for
-\code{lineagePath}.}
+\item{similarity}{The parameter for identifying phylogenetic pathway using SNP. If
+provided as fraction between 0 and 1, then the minimum number of SNP will
+be total tips times \code{Nmin}. If provided as integer greater than 1, the
+minimum number will be \code{Nmin}.}
 
 \item{...}{Other arguments.}
+
+\item{alignment}{An \code{alignment} object. This commonly can be from
+sequence parsing function in the \code{\link{seqinr}} package. Sequence
+names in the alignment should include all \code{tip.label} in the tree}
+
+\item{seqType}{The type of the sequence in the alignment file. The default is
+"AA" for amino acid. The other options are "DNA" and "RNA".}
+
+\item{reference}{Name of reference for site numbering. The name has to be one
+of the sequences' name. The default uses the intrinsic alignment numbering}
+
+\item{gapChar}{The character to indicate gap. The numbering will skip the
+\code{gapChar} for the reference sequence.}
+
+\item{minSkipSize}{The minimum number of tips to have gap or ambiguous amino
+acid/nucleotide for a site to be ignored in other analysis. This will not
+affect the numbering. The default is 0.8.}
 
 \item{simMatrix}{Deprecated and will not have effect.}
 
@@ -74,6 +108,9 @@ Lineage path represent by node number.
 When used on the return of \code{sneakPeek}, a
   \code{lineagePath} with the closest \code{similarity} will be retrieved
   from the returned value.
+
+\code{similarity} has no effect when using on
+  \code{\link{paraFixSites}} object
 }
 \examples{
 data('zikv_tree')
